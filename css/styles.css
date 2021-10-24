@@ -1,0 +1,1008 @@
+:root {
+    /*Colours*/
+    --primary-clr: #51483E;
+    --secondary-clr-white: #F4F3EE;
+    --secondary-clr-brown: #A69A8C;
+    --secondary-clr-black: #343434;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h2 {
+    margin-bottom: 30px;
+    font-weight: 400;
+    font-size: 32px;
+}
+
+p {
+    line-height: 1.8rem;
+    font-size: 16px;
+}
+
+.btn {
+    padding: 10px 40px;
+    border-radius: 25px;
+    border: 3px solid var(--primary-clr);
+    background-color: var(--primary-clr);
+    font-size: 18px;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--secondary-clr-white);
+    transition: all .3s ease;
+}
+
+.btn-solid:hover {
+    background: rgba(0, 0, 0, 0);
+}
+
+.btn-empty:hover {
+    background-color: var(--primary-clr) !important;
+}
+
+/*
+Header/Nav
+---------------------
+*/
+.nav-container {
+    width: 100%;
+    background-color: rgba(81, 72, 62, .75);
+    position: fixed;
+    z-index: 100;
+    transition: all .8s ease;
+}
+
+.fade-in {
+    background-color: var(--primary-clr) !important;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3);
+}
+
+.inner-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    height: 110px;
+}
+
+.inner-container .logo {
+    display: flex;
+    align-items: center;
+}
+
+.inner-container .logo img {
+    width: 200px;
+    height: auto;
+}
+
+.menu-container {
+    height: 100%;
+}
+
+.menu-container > ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.menu-container ul li {
+    margin-right: 40px;
+    color: var(--secondary-clr-white);
+    text-transform: uppercase;
+}
+
+.menu-container ul .nav-btn {
+    position: relative;
+}
+
+.menu-container ul .nav-btn::after {
+    content: "";
+    transition: all .3s ease;
+}
+
+.menu-container ul .nav-btn:hover::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--secondary-clr-white);
+}
+
+.menu-container ul .underline::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--secondary-clr-white);
+}
+
+.menu-container ul li a {
+    text-decoration: none;
+    color: var(--secondary-clr-white);
+    letter-spacing: 2px;
+}
+
+.menu-container ul li .fa-phone {
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.menu-container .fa-facebook, .fa-instagram, .fa-phone {
+    font-size: 30px;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(90deg);
+    }
+}
+
+@keyframes rotate-reverse {
+    from {
+        transform: rotate(90deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+/*------------------------------------------------------*/
+/*Index Styles*/
+
+/*
+Hero
+---------------------
+*/
+#hero {
+    background-attachment: fixed;
+    background-color: rgba(81, 72, 62, .5);
+    background-image: url(../img/hero-img.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+    background-size: cover;
+}
+
+.hero-content {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    padding: 250px 30px;
+}
+
+.hero-content .hero-heading {
+    color: var(--secondary-clr-white);
+    font-weight: 400;
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.hero-content .hero-heading .hero-span {
+    font-weight: 700;
+}
+
+.hero-content h2 {
+    color: var(--secondary-clr-white);
+    font-weight: 400;
+    margin-bottom: 35px;
+}
+
+.hero-content .hero-btns .btn-solid .fa-chevron-right {
+    margin-left: 5px;
+    font-size: 12px;
+    color: var(--secondary-clr-brown);
+}  
+
+.hero-content .hero-btns .btn-empty {
+    margin-left: 40px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+/*
+Welcome Section
+---------------------
+*/
+.welcome-section {
+    background-color: var(--secondary-clr-white);
+}
+
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 30px;
+}
+
+.inner-welcome-section {
+    display: flex;
+    align-items: center;  
+    position: relative;
+}
+
+.inner-welcome-section .background-icon {
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+    width: 400px;
+    z-index: 0;
+}
+
+.main-container .image-container {
+    border-bottom: 3px solid var(--primary-clr);
+    padding-bottom: 10px;
+    margin-right: 60px;
+}
+
+.main-container .image-container .welcome-img {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 500px;
+    height: 500px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .25);
+}
+
+.main-container .image-container .welcome-img img {
+    width: 800px;
+    height: auto;
+}
+
+.main-container .text-container h1 {
+    color: var(--secondary-clr-black);
+    margin-bottom: 30px;
+} 
+
+.main-container .text-container .welcome-text {
+    margin-bottom: 30px;
+    color: var(--secondary-clr-black);
+}  
+
+.main-container .text-container .btn:hover {
+    color: var(--secondary-clr-black) !important;
+}
+
+/*
+Photos From Customers Section
+---------------------
+*/
+.instagram-imgs-container {
+    background: var(--secondary-clr-brown);
+}
+
+.instagram-imgs-container .instagram-imgs-inner-container {
+    display: flex;
+    align-items: center;
+}
+
+.instagram-imgs-container .instagram-imgs-inner-container .text-container {
+    width: 600px;
+    margin-right: 30px;
+}
+
+.instagram-imgs-container .instagram-imgs-inner-container .text-container .instagram-heading, .instagram-text, a {
+    color: var(--secondary-clr-white);
+    margin-bottom: 10px;
+}
+
+.instagram-imgs-container .instagram-imgs-inner-container .images-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px 0 20px;
+    border-left: 3px solid rgba(0, 0, 0, 0.1);
+}
+
+.instagram-imgs-container .instagram-imgs-inner-container .images-container .column {
+    flex: 25%;
+    max-width: 33%;
+    padding: 0 4px;
+}
+
+.instagram-imgs-container .instagram-imgs-inner-container .images-container .column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+    height: auto;
+}
+
+/*
+Beautiful Coffee Blends Section
+---------------------
+*/
+.blends-container {
+    background-attachment: fixed;
+    background-color: rgba(0, 0, 0, 0.6);
+    background-blend-mode: multiply;
+    background-image: url(../img/coffee-beans.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    color: var(--secondary-clr-white);
+}
+
+.blends-container .blends-content {
+    border: 3px solid var(--secondary-clr-white);
+    padding: 80px;
+}
+
+.blends-container .blends-content p {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/*
+Food, Coffe, People Section
+---------------------
+*/
+.short-about-container {
+    background-color: var(--secondary-clr-white);
+    overflow-x: hidden;
+}
+
+.short-about-container .main-container .img-buttons {
+    border-top: 3px solid;
+    padding-top: 10px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+}
+
+.short-about-container .main-container .img-buttons .dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 10px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.5s ease;
+}
+
+.active {
+    background-color: var(--primary-clr) !important;
+}
+
+.short-about-container .main-container .img-buttons .prev, .next {
+    cursor: pointer;
+    color: var(--primary-clr);
+    font-size: 30px;
+    padding: 0 3px;
+    position: relative;
+    transition: all .3s ease;
+}
+
+.short-about-container .main-container .img-buttons .prev::after, .next::after {
+    content: "";
+    width: 18px;
+    height: 3px;
+    transition: all .3s ease;
+}
+
+.short-about-container .main-container .img-buttons .next:hover::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 18px;
+    height: 3px;
+    border-radius: 25px;
+    background-color: var(--primary-clr);
+}
+
+.short-about-container .main-container .img-buttons .prev:hover::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 18px;
+    height: 3px;
+    border-radius: 25px;
+    background-color: var(--primary-clr);
+}
+
+.short-about-container .main-container .the-food, .the-coffee, .the-people {
+    display: flex;
+    align-items: center;
+    margin-bottom: 150px;
+    position: relative;
+}
+
+.short-about-container .main-container .the-food .bg-icon {
+    position: absolute;
+    width: 300px;
+    bottom: -300px;
+    right: -100px;
+}
+
+.short-about-container .main-container .the-coffee .bg-icon {
+    position: absolute;
+    width: 300px;
+    bottom: -200px;
+    left: -150px;
+    pointer-events: none;
+}
+
+.short-about-container .main-container .the-people .bg-icon {
+    position: absolute;
+    width: 300px;
+    bottom: -100px;
+    right: -150px;
+}
+
+.short-about-container .main-container .the-coffee {
+    flex-direction: row-reverse;
+}
+
+.short-about-container .main-container .the-coffee .img-container {
+    margin-right: 0 !important;
+    margin-left: 100px;
+}
+
+.short-about-container .main-container .the-people {
+    margin-bottom: 0;
+}
+
+.short-about-container .main-container .the-food .img-container, .the-coffee .img-container, .the-people .img-container {
+    flex: 1;
+    width: 500px;
+    height: 500px;
+    margin-right: 100px;
+    z-index: 10;
+} 
+
+.short-about-container .main-container .the-food .inner-img-container, .the-coffee .inner-img-container, .the-people .inner-img-container {
+    border-radius: 50%;
+    width: 500px;
+    height: 500px;
+    overflow: hidden;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} 
+
+.short-about-container .main-container .the-food .slide1, .the-coffee .slide2, .the-people .slide3 {
+    display: none;
+} 
+
+.short-about-container .main-container .the-food .img-container img, .the-coffee .img-container img, .the-people .img-container img {
+    width: 100%;
+    height: auto;
+    
+} 
+
+.short-about-container .main-container .the-food .text-container, .the-coffee .text-container, .the-people .text-container {
+    flex: 1;
+}
+
+.short-about-container .main-container .the-food .text-container .the-food-text, .the-coffee .text-container .the-coffee-text, .the-people .text-container .the-people-text {
+    margin-bottom: 30px;
+}
+
+.short-about-container .main-container .the-food .text-container .btn .fas, .the-coffee .text-container .btn .fas, .the-people .text-container .btn .fas {
+    margin-left: 10px;   
+}
+
+.from-left {
+    transform: translateX(-50%);
+}
+
+.from-right {
+    transform: translateX(50%);
+}
+
+.from-left,
+.from-right {
+    transition: opacity 250ms ease-in, transform 400ms ease-in;
+    opacity: 0;
+}
+
+.from-left.appear,
+.from-right.appear {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+/* Fading animation */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 2s;
+    animation-name: fade;
+    animation-duration: 2s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+  
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+/*
+Reviews
+---------------------
+*/
+.reviews-container {
+    background-attachment: fixed;
+    background-color: rgba(0, 0, 0, 0.35);
+    background-blend-mode: multiply;
+    background-image: url(../img/spilled-coffee.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.reviews-container .reviews-section{
+    border: 3px solid var(--secondary-clr-white);
+    padding: 40px 0;
+}
+
+.reviews-container .main-container h2 {
+    color: var(--secondary-clr-white);
+    text-align: center;
+}
+
+.reviews-container .main-container .reviews-inner-container {
+    width: 800px;
+    height: 700px;
+    overflow-y: auto;
+    margin: 0 auto;
+}
+
+.reviews-container .main-container .reviews-inner-container .review {
+    position: relative;
+    padding: 40px 35px 20px 35px;
+    background-color: var(--primary-clr);
+    margin-bottom: 75px;
+    color: var(--secondary-clr-white);
+    border-radius: 25px;
+    margin-right: 30px;
+}
+
+.reviews-container .main-container .reviews-inner-container .review:first-child {
+    margin-top: 30px;
+}
+
+.reviews-container .main-container .reviews-inner-container .review:last-child {
+    margin-bottom: 0;
+}
+
+.reviews-container .main-container .reviews-inner-container .review h3 {
+    font-weight: 400;
+    font-size: 25px;
+    margin: 10px 0;
+}
+
+.reviews-container .main-container .reviews-inner-container .review .customer-name {
+    font-size: 14px;
+    text-align: right;
+    font-style: italic;
+    margin-top: 10px;
+    font-weight: 200;
+}
+
+.reviews-container .main-container .reviews-inner-container .review .svg {
+    position: absolute;
+    width: 65px;
+    top: -30px;
+}
+
+/*
+Reviews
+---------------------
+*/
+.footer {
+    background-color: var(--primary-clr);
+    color: var(--secondary-clr-white);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+}
+
+.footer .copyright a {
+    text-decoration: none;
+    color: var(--secondary-clr-white);
+    font-size: 14px;
+}
+
+.footer .socials {
+    display: flex;
+    width: 120px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer .socials .social {
+    width: 30px;
+    align-items: center;
+}
+
+.footer .socials .social:last-child {
+    width: 23px;
+}
+
+/*------------------------------------------------------*/
+/*Menu Styles*/
+
+/*
+Menu Header
+---------------------
+*/
+.menu-header {
+    background-color: rgba(81, 72, 62, 0.5);
+    background-blend-mode: multiply;
+    background-image: url(../img/menu-image.jpg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    height: 300px;
+}
+
+.menu-header .main-container .h2-header {
+    color: var(--secondary-clr-white);
+    margin-top: 80px;
+    text-align: center;
+    font-size: 60px;
+    font-weight: 400;
+}
+
+/*
+Menu Content
+---------------------
+*/
+.menu-content-container {
+    background-color: var(--secondary-clr-white);
+}
+
+.menu-content-container .inner-menu-container .menu-h2 {
+    text-align: center;
+    color: var(--secondary-clr-black);
+    margin-bottom: 15px;
+}
+
+.menu-content-container .inner-menu-container .drinks-container, .breakfast-container {
+    margin-bottom: 100px;
+}
+
+.menu-content-container .inner-menu-container .drinks-container, .breakfast-container, .lunch-container {
+    border: 3px solid var(--secondary-clr-brown);
+    padding: 40px;
+}
+
+.menu-content-container .inner-menu-container .desc-text {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto;
+    font-size: 14px;
+    color: var(--secondary-clr-brown);
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+/*Drinks Menu Items*/
+.menu-content-container .inner-menu-container .drinks-container .drinks-menu {
+    display: flex;
+    gap: 100px;
+}
+
+.menu-content-container .inner-menu-container .drinks-container .drinks-menu .hot-drinks, .cold-drinks {
+    flex: 1;
+}
+
+.menu-content-container .inner-menu-container .drinks-container .drinks-menu .hot-drinks .hot-drink-item, .cold-drinks .cold-drink-item {
+    margin-bottom: 30px;
+}
+
+.menu-content-container .inner-menu-container .drinks-container .drinks-menu .hot-drinks .hot-drink-item .title, .cold-drinks .cold-drink-item .title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu-content-container .inner-menu-container .drinks-container .drinks-menu .hot-drinks .hot-drink-item .title .name, .price-sm, .price-md, .price-lg, .cold-drinks .cold-drink-item .title, .name, .price {
+    font-weight: 400;
+}
+
+.menu-content-container .inner-menu-container .drinks-container .drinks-menu .hot-drinks .hot-drink-item .title .prices {
+    display: flex;
+}
+
+.menu-content-container .inner-menu-container .drinks-container .drinks-menu .hot-drinks .hot-drink-item .title .prices .price {
+    margin-left: 15px;
+}
+
+.menu-content-container .inner-menu-container .drinks-container .drinks-menu .hot-drinks .hot-drink-item .item-text, .cold-drinks .cold-drink-item .item-text {
+    font-style: italic;
+    color: var(--secondary-clr-brown);
+    font-size: 14px;
+}
+
+/*Breakfast and Lunch Menu Items*/
+.menu-content-container .inner-menu-container .breakfast-container .breakfast-menu .breakfast-item, .lunch-container .lunch-menu .lunch-item {
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+.menu-content-container .inner-menu-container .breakfast-container .breakfast-menu .breakfast-item .title, .lunch-container .lunch-menu .lunch-item .title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu-content-container .inner-menu-container .breakfast-container .breakfast-menu .breakfast-item .item-text, .lunch-container .lunch-menu .lunch-item .item-text {
+    font-style: italic;
+    color: var(--secondary-clr-brown);
+    font-size: 14px;
+}
+
+/*------------------------------------------------------*/
+/*Contact Styles*/
+
+/*
+Contact Header
+---------------------
+*/
+.contact-header {
+    width: 100%;
+    height: 300px;
+    background-color: rgba(81, 72, 62, .5);
+    background-blend-mode: multiply;
+    background-image: url(../img/cafe-blurred.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.contact-header .h2-header {
+    color: var(--secondary-clr-white);
+    margin-top: 80px;
+    text-align: center;
+    font-size: 60px;
+    font-weight: 400;
+}
+
+/*
+Contact Info
+---------------------
+*/
+.contact-container {
+    background-color: var(--secondary-clr-white);
+}
+
+.contact-container .contact-inner-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contact-container .contact-inner-container .left .contact-info-container {
+    background-color: #FCFCFC;
+    padding: 20px;
+    border-radius: 25px;
+    box-shadow: 0 4px 3px 0 rgba(0, 0, 0, 0.5);
+}
+
+.contact-container .contact-inner-container .left .contact-info-container ul {
+    list-style: none;
+}
+
+.contact-container .contact-inner-container .left .contact-info-container ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.contact-container .contact-inner-container .left .contact-info-container ul li .contact-address {
+    color: var(--secondary-clr-black);
+}
+
+.contact-container .contact-inner-container .left .contact-info-container ul li:last-child {
+    margin-bottom: 0;
+}
+
+.contact-container .contact-inner-container .left .contact-info-container ul li svg {
+    width: 20px;
+    margin-right: 50px;
+}
+
+.contact-container .contact-inner-container .left .contact-info-container ul li:last-child svg {
+    align-self: flex-start;
+}
+
+.contact-container .contact-inner-container .left .contact-info-container ul li .trading-hours {
+    width: 100%;
+}
+
+.contact-container .contact-inner-container .left .contact-info-container ul li .trading-hours h3 {
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.contact-container .contact-inner-container .left .contact-info-container ul li .trading-hours li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+/*
+Form
+---------------------
+*/
+.contact-container .contact-inner-container .right h2 {
+    margin-bottom: 5px;
+}
+
+.contact-container .contact-inner-container .right p {
+    margin-bottom: 10px;
+}
+
+.contact-container .contact-inner-container .right form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-container .contact-inner-container .right form input, textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--primary-clr);
+    border: 3px solid #A69A8C;
+}
+
+.contact-container .contact-inner-container .right form button {
+    padding: 10px 0;
+    margin-top: 10px;
+    background-color: var(--primary-clr);
+    color: var(--secondary-clr-white);
+    font-size: 20px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+}
+
+/*------------------------------------------------------*/
+/*About Styles*/
+
+/*
+Header
+---------------------
+*/
+.about-header {
+    width: 100%;
+    height: 300px;
+    background-color: rgba(81, 72, 62, .5);
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), var(--primary-clr)), url(../img/three-coffees-blurred.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.about-header .h2-header {
+    color: var(--secondary-clr-white);
+    margin-top: 80px;
+    text-align: center;
+    font-size: 60px;
+    font-weight: 400;
+}
+
+.about-logo {
+    background-color: var(--primary-clr);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.about-logo img {
+    width: 500px;
+    height: auto;
+}
+
+/*
+Our Story/Our Mission
+---------------------
+*/
+.about-container {
+    background-color: var(--secondary-clr-white);
+    overflow-x: hidden;
+}
+
+.about-container .about-inner-container .split {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+}
+
+.about-container .about-inner-container .split .background-svg {
+    position: absolute;
+    width: 550px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.about-container .about-inner-container .our-story-section .background-svg {
+    left: -400px;
+}
+
+.about-container .about-inner-container .our-mission-section .background-svg {
+    width: 700px !important;
+    right: -400px;
+    bottom: -100px;
+}
+
+.about-container .about-inner-container .split .text-container {
+    flex: 1;
+    text-align: center;
+}
+
+.about-container .about-inner-container .split .img-container {
+    flex: 1;
+    width: 100%;
+    border-bottom: 3px solid var(--primary-clr);
+    padding-bottom: 10px;
+}
+
+.about-container .about-inner-container .img-container img {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+/*
+Image Section
+---------------------
+*/
+.about-container .about-inner-container .image-section {
+    display: flex;
+    margin: 200px 0;
+    justify-content: space-between;
+}
+
+.about-container .about-inner-container .image-section .img {
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--primary-clr);
+    max-height: 540px;
+}
+
+.about-container .about-inner-container .image-section .img:nth-child(2) {
+    margin-top: 50px;
+}
+
+.about-container .about-inner-container .image-section .img:nth-child(3) {
+    margin-top: 100px;
+}
+
+.about-container .about-inner-container .image-section .img img {
+    width: 350px;
+    height: auto;
+    box-shadow: 0 4px 4px 0px rgba(0, 0, 0, 0.5);
+}
+
+
+/*------------------------------------------------------*/
+/*Media Queries*/
+@media only screen and (max-width: 1300px) {
+    
+}
