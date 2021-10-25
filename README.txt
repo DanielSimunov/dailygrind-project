@@ -2,7 +2,7 @@ Hi,
 
 Thanks for checking out my website. 
 
-I designed the site in figma, then coded it in VS code.
+I designed the site in figma, then coded it in VS code. Here's a link to view the design in figma: https://www.figma.com/file/T55Sqr1a5OrP00jq5Ajc3j/daily-grind?node-id=0%3A1
 
 I created the logo and some of the icons.
 
