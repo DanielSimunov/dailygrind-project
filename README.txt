@@ -1,6 +1,6 @@
 Hi,
 
-Thanks for checking out my website. 
+Thanks for checking out my website. You can view the site at: https://danielsimunov.github.io/danielsimunov.github.dailygrind-project/
 
 I designed the site in figma, then coded it in VS code. Here's a link to view the design in figma: https://www.figma.com/file/T55Sqr1a5OrP00jq5Ajc3j/daily-grind?node-id=0%3A1
 
