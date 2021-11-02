@@ -64,12 +64,17 @@ Header/Nav
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3);
 }
 
+.fade-in-menu {
+    background-color: var(--secondary-clr-brown) !important;
+}
+
 .inner-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 40px;
     height: 110px;
+    position: relative;
 }
 
 .inner-container .logo {
@@ -77,9 +82,90 @@ Header/Nav
     align-items: center;
 }
 
+.inner-container .logo a {
+    margin-bottom: 0;
+}
+
 .inner-container .logo img {
     width: 200px;
     height: auto;
+}
+
+.hamburger {
+    display: none;
+    background: transparent;
+    position: relative;
+    width: 50px;
+    height: 35px;
+    transition: .5s ease-in-out;
+}
+
+.hamburger span {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 6px;
+    border-radius: 10px;
+    background-color: var(--secondary-clr-white);
+    left: 0;
+    transition: .25s ease-in-out;
+}
+
+.hamburger span:nth-child(1) {
+    top: 0;
+}
+
+.hamburger span:nth-child(2) {
+    top: 16px;
+}
+
+.hamburger span:nth-child(3) {
+    top: 32px;
+}
+
+#hamburger.open span:nth-child(1) {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    top: 15px;
+    left: 0;
+}
+
+#hamburger.open span:nth-child(2) {
+    width: 0;
+    opacity: 0;
+}
+
+#hamburger.open span:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    top: 15px;
+    left: 0;
+}
+
+.hamburger-menu {
+    position: absolute;
+    width: 100%;
+    background-color: rgba(133, 117, 99, 0.75);
+    text-align: center;
+    top: 110px;
+    left: 0;
+    height: 0;
+    overflow-y: hidden;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .25);
+    transition: all .4s ease;
+}
+
+.hamburger-menu ul {
+    list-style: none;
+}
+
+.hamburger-menu ul li {
+    padding: 15px;
+}
+
+.hamburger-menu ul li a {
+    text-decoration: none;
+    font-size: 20px;
 }
 
 .menu-container {
@@ -97,6 +183,10 @@ Header/Nav
     margin-right: 40px;
     color: var(--secondary-clr-white);
     text-transform: uppercase;
+}
+
+.menu-container ul li:last-child {
+    margin-right: 0px;
 }
 
 .menu-container ul .nav-btn {
@@ -203,6 +293,7 @@ Hero
     color: var(--secondary-clr-white);
     font-weight: 400;
     margin-bottom: 35px;
+    font-size: 20px;
 }
 
 .hero-content .hero-btns .btn-solid .fa-chevron-right {
@@ -234,6 +325,7 @@ Welcome Section
     display: flex;
     align-items: center;  
     position: relative;
+    gap: 50px;
 }
 
 .inner-welcome-section .background-icon {
@@ -245,22 +337,26 @@ Welcome Section
 }
 
 .main-container .image-container {
-    border-bottom: 3px solid var(--primary-clr);
+    position: relative;
+    flex: 1;
+    max-width: 500px;
+    height: auto;
     padding-bottom: 10px;
-    margin-right: 60px;
+    border-bottom: 3px solid var(--primary-clr);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.main-container .image-container .welcome-img {
+.main-container .image-container img {
+    width: 100%;
+    height: auto;
     border-radius: 50%;
-    overflow: hidden;
-    width: 500px;
-    height: 500px;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .25);
 }
 
-.main-container .image-container .welcome-img img {
-    width: 800px;
-    height: auto;
+.main-container .text-container {
+    flex: 1;
 }
 
 .main-container .text-container h1 {
@@ -291,7 +387,7 @@ Photos From Customers Section
 }
 
 .instagram-imgs-container .instagram-imgs-inner-container .text-container {
-    width: 600px;
+    flex: 1;
     margin-right: 30px;
 }
 
@@ -303,6 +399,7 @@ Photos From Customers Section
 .instagram-imgs-container .instagram-imgs-inner-container .images-container {
     width: 100%;
     display: flex;
+    flex: 1;
     flex-wrap: wrap;
     padding: 0 4px 0 20px;
     border-left: 3px solid rgba(0, 0, 0, 0.1);
@@ -363,7 +460,7 @@ Food, Coffe, People Section
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 500px;
+    max-width: 500px;
 }
 
 .short-about-container .main-container .img-buttons .dot {
@@ -423,6 +520,7 @@ Food, Coffe, People Section
     align-items: center;
     margin-bottom: 150px;
     position: relative;
+    gap: 50px;
 }
 
 .short-about-container .main-container .the-food .bg-icon {
@@ -453,7 +551,6 @@ Food, Coffe, People Section
 
 .short-about-container .main-container .the-coffee .img-container {
     margin-right: 0 !important;
-    margin-left: 100px;
 }
 
 .short-about-container .main-container .the-people {
@@ -462,16 +559,13 @@ Food, Coffe, People Section
 
 .short-about-container .main-container .the-food .img-container, .the-coffee .img-container, .the-people .img-container {
     flex: 1;
-    width: 500px;
-    height: 500px;
-    margin-right: 100px;
     z-index: 10;
 } 
 
 .short-about-container .main-container .the-food .inner-img-container, .the-coffee .inner-img-container, .the-people .inner-img-container {
     border-radius: 50%;
-    width: 500px;
-    height: 500px;
+    max-width: 500px;
+    height: auto;
     overflow: hidden;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .25);
     display: flex;
@@ -564,10 +658,11 @@ Reviews
 }
 
 .reviews-container .main-container .reviews-inner-container {
-    width: 800px;
+    max-width: 800px;
     height: 700px;
     overflow-y: auto;
     margin: 0 auto;
+    padding: 0 10px;
 }
 
 .reviews-container .main-container .reviews-inner-container .review {
@@ -578,6 +673,10 @@ Reviews
     color: var(--secondary-clr-white);
     border-radius: 25px;
     margin-right: 30px;
+}
+
+.reviews-container .main-container .reviews-inner-container .review:nth-child(odd) {
+    background-color: var(--secondary-clr-brown);
 }
 
 .reviews-container .main-container .reviews-inner-container .review:first-child {
@@ -912,10 +1011,17 @@ Header
     justify-content: center;
     align-items: center;
     padding: 10px 0;
+    width: 100%;
+}
+
+.about-logo .about-logo-container {
+    max-width: 500px;
+    height: auto;
+    padding: 0 10px;
 }
 
 .about-logo img {
-    width: 500px;
+    max-width: 100%;
     height: auto;
 }
 
@@ -978,12 +1084,14 @@ Image Section
     display: flex;
     margin: 200px 0;
     justify-content: space-between;
+    gap: 20px;
 }
 
 .about-container .about-inner-container .image-section .img {
     padding-bottom: 10px;
-    border-bottom: 3px solid var(--primary-clr);
     max-height: 540px;
+    width: 350px;
+    position: relative;
 }
 
 .about-container .about-inner-container .image-section .img:nth-child(2) {
@@ -995,14 +1103,114 @@ Image Section
 }
 
 .about-container .about-inner-container .image-section .img img {
-    width: 350px;
+    width: 100%;
     height: auto;
+    background-color: rgba(0, 0, 0, 0);
     box-shadow: 0 4px 4px 0px rgba(0, 0, 0, 0.5);
 }
 
 
 /*------------------------------------------------------*/
 /*Media Queries*/
-@media only screen and (max-width: 1300px) {
-    
+@media only screen and (max-width: 1024px) {
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .menu-container {
+        display: none;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .inner-welcome-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .instagram-imgs-inner-container {
+        flex-direction: column;
+    }
+
+    .instagram-imgs-inner-container .text-container {
+        text-align: center;
+        margin: 0 !important;
+        padding: 0 10px;
+    }
+
+    .instagram-imgs-inner-container .images-container {
+        border: none !important;
+        margin-top: 30px;
+    }
+
+    .blends-content {
+        padding: 30px 20px !important;
+    }
+
+    .the-food, .the-coffee, .the-people {
+        flex-direction: column !important;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .drinks-container, .lunch-container, .breakfast-container {
+        padding: 10px !important;
+    }
+
+    .drinks-menu {
+        flex-direction: column;
+        gap: 20px !important;
+    }
+
+    .contact-inner-container {
+        flex-direction: column-reverse;
+        gap: 40px;
+    }
+
+    .our-story-section, .our-mission-section {
+        flex-direction: column;
+    }
+
+    .image-section {
+        margin: 50px 0 !important;
+    }
+
+    .image-section .img {
+        margin: 0 !important;
+    }
+
+    .background-icon, .bg-icon, .background-svg {
+        display: none;
+    }
+
+
+}
+
+@media only screen and (max-width: 480px) {
+    .hero-btns {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hero-btns .btn-empty {
+        margin: 0 !important;
+    }
+
+    .inner-welcome-section .btn-solid {
+        display: block;
+        width: 100%;
+    }
+
+    .the-food .btn-solid, .the-coffee .btn-solid, .the-people .btn-solid {
+        display: block;
+        width: 100%;
+    }
+
+    .contact-inner-container .right h2, p {
+        text-align: center;
+    }
 }
