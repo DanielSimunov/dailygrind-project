@@ -1191,6 +1191,13 @@ Image Section
 }
 
 @media only screen and (max-width: 480px) {
+    
+    .logo a img {
+        content: url('../img/logo-small.png');
+        max-width: 100%;
+        height: auto;
+    }
+    
     .hero-btns {
         display: flex;
         flex-direction: column;
