@@ -1194,7 +1194,7 @@ Image Section
     
     .logo a img {
         content: url('../img/logo-small.png');
-        max-width: 100%;
+        max-width: 100px !important;
         height: auto;
     }
     
