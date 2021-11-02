@@ -29,7 +29,7 @@ var hamburger = document.getElementById("hamburger");
 var hamburgerMenu = document.getElementById("hamburger-menu");
 
 hamburger.addEventListener('click', function() {
-    if (hamburgerMenu.style.height === '0px') {
+    if (hamburgerMenu.style.height == '0px' || hamburgerMenu.style.height == '') {
         hamburger.classList.add("open");
         hamburgerMenu.style.height = '220px';
     } else {
