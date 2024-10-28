@@ -463,7 +463,7 @@ Food, Coffe, People Section
     max-width: 500px;
 }
 
-.short-about-container .main-container .img-buttons .dot {
+.short-about-container .main-container .img-buttons .dot1, .dot2, .dot3 {
     height: 15px;
     width: 15px;
     margin: 0 10px;
